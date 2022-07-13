@@ -1,0 +1,75 @@
+From a86bc031c47e0d5248c92ac3830c737d5da0ca00 Mon Sep 17 00:00:00 2001
+From: A Big Salty Fish <1055126159@qq.com>
+Date: Wed, 13 Jul 2022 14:41:47 +0800
+Subject: [PATCH] Evolver: Add a switch to control DT2W
+
+---
+ res/values-zh-rCN/evolution_strings.xml   | 3 +++
+ res/values-zh-rTW/evolution_strings.xml   | 3 +++
+ res/values/evolution_strings.xml          | 4 ++++
+ res/xml/evolution_settings_lockscreen.xml | 6 ++++++
+ 4 files changed, 16 insertions(+)
+
+diff --git a/res/values-zh-rCN/evolution_strings.xml b/res/values-zh-rCN/evolution_strings.xml
+index 897dd80..01cd466 100644
+--- a/res/values-zh-rCN/evolution_strings.xml
++++ b/res/values-zh-rCN/evolution_strings.xml
+@@ -823,6 +823,9 @@
+     <!-- Double Tap Lock screen to Sleep -->
+     <string name="double_tap_to_sleep_lockscreen_title">点按锁定屏幕</string>
+     <string name="double_tap_to_sleep_lockscreen_summary">双击锁屏界面顶部或底部快捷键区域使设备休眠</string>
++    <!-- Double Tap Screen to Wake -->
++    <string name="double_tap_to_wake_title">双击亮屏</string>
++    <string name="double_tap_to_wake_summary">熄屏时双击屏幕来唤醒设备</string>
+     <!-- Double tap status bar to sleep -->
+     <string name="double_tap_to_sleep_title">点击状态栏</string>
+     <string name="double_tap_to_sleep_summary">双击状态栏锁屏</string>
+diff --git a/res/values-zh-rTW/evolution_strings.xml b/res/values-zh-rTW/evolution_strings.xml
+index 74b96ae..e74ff73 100644
+--- a/res/values-zh-rTW/evolution_strings.xml
++++ b/res/values-zh-rTW/evolution_strings.xml
+@@ -949,6 +949,9 @@
+     <!-- Double Tap Lock screen to Sleep -->
+     <string name="double_tap_to_sleep_lockscreen_title">在鎖定畫面上輕觸</string>
+     <string name="double_tap_to_sleep_lockscreen_summary">輕觸鎖定畫面的上半部或是底部捷徑區域兩下以關閉裝置螢幕</string>
++    <!-- Double Tap Screen to Wake -->
++    <string name="double_tap_to_wake_title">雙擊亮屏</string>
++    <string name="double_tap_to_wake_summary">熄屏時雙擊屏幕來喚醒設備</string>
+     <!-- Double tap status bar to sleep -->
+     <string name="double_tap_to_sleep_title">狀態列輕觸兩下</string>
+     <string name="double_tap_to_sleep_summary">輕觸狀態列區域兩下以關閉裝置螢幕</string>
+diff --git a/res/values/evolution_strings.xml b/res/values/evolution_strings.xml
+index ec8164a..df00e4c 100644
+--- a/res/values/evolution_strings.xml
++++ b/res/values/evolution_strings.xml
+@@ -977,6 +977,10 @@
+     <string name="double_tap_to_sleep_lockscreen_title">Tap on lock screen</string>
+     <string name="double_tap_to_sleep_lockscreen_summary">Double-tap on the top third or bottom shortcut area of the lock screen to put the device to sleep</string>
+ 
++    <!-- Double Tap Screen to Wake -->
++    <string name="double_tap_to_wake_title">Double tap to wake</string>
++    <string name="double_tap_to_wake_summary">Double-tap the screen to wake the device when the screen is off</string>
++
+     <!-- Double tap status bar to sleep -->
+     <string name="double_tap_to_sleep_title">Tap on status bar</string>
+     <string name="double_tap_to_sleep_summary">Double-tap status bar to put the device to sleep</string>
+diff --git a/res/xml/evolution_settings_lockscreen.xml b/res/xml/evolution_settings_lockscreen.xml
+index 489d012..d1eff36 100644
+--- a/res/xml/evolution_settings_lockscreen.xml
++++ b/res/xml/evolution_settings_lockscreen.xml
+@@ -54,6 +54,12 @@
+             android:summary="@string/disable_qs_summary"
+             android:defaultValue="false" />
+ 
++        <com.evolution.settings.preference.SecureSettingSwitchPreference
++            android:key="double_tap_to_wake"
++            android:title="@string/double_tap_to_wake_title"
++            android:summary="@string/double_tap_to_wake_summary"
++            android:defaultValue="true" />
++
+         <com.evolution.settings.preference.GlobalSettingSwitchPreference
+             android:key="lid_behavior"
+             android:title="@string/lid_behavior_title"
+-- 
+2.37.1
+
